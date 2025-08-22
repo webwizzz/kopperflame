@@ -66,7 +66,7 @@ const ContactPage = () => {
     e.preventDefault();
     try {
 
-      const response = await axios.post('https://api.bamboodigital.in/bamboo/send-email', {
+      const response = await axios.post('https://mail.bamboodigital.co.in/bamboo/send-email', {
         name: formData.name,
         email: formData.email,
         message: formData.message
