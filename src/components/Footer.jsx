@@ -14,14 +14,14 @@ const Footer = () => {
   
 
   return (
-    <footer className="bg-white pt-4 md:pt-40">
-      <div className="max-w-[2000px] mx-auto px-4 md:px-8 border-t-2 py-2">
+    <footer className="bg-[#000000] text-white pt-4 md:pt-40">
+      <div className="max-w-[2000px] mx-auto px-4 md:px-8 border-[#FF5E1A] border-t-2 py-2">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-9 mb-10 md:mb-60 ">
           {/* Logo */}
           <div>
             <Link to="/" className="text-2xl font-light">
               <img
-                src="/darkLogo.svg" 
+                src="/whiteLogo.svg" 
                 alt="Logo"
                 className="h-10 object-contain w-44 transition-opacity duration-300"
               />
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
 
           {/* Main Navigation */}
-          <nav className="flex flex-col items-start text-3xl tracking-tight md:text-6xl font-[450]">
+          <nav className="flex flex-col items-start text-3xl text-[#FF5E1A] font-grand tracking-tight md:text-6xl font-[350]">
             {mainLinks.map((link) => (
               <Link
                 key={link}
@@ -43,8 +43,8 @@ const Footer = () => {
           </nav>
 
           {/* Social Links */}
-          <div className="space-y-0">
-          <h3 className="text-xl font-light">Social</h3>
+          <div className="space-y-0 font-grand text-[#FF5E1A]">
+          <h3 className="text-xl font-extralight">Social</h3>
           <div className="flex flex-col space-y-0">
             {socialLinks.map((social) => (
               <a
@@ -69,20 +69,20 @@ const Footer = () => {
           <p className="text-xl mb-4">Interested in working with us?</p>
           <Link 
             to="/contact" 
-            className="relative text-6xl md:text-[12rem] font-[500] border-black ease-out duration-700 group"
+            className="relative font-grand text-6xl md:text-[12rem] text-[#FF5E1A] font-[500] border-black ease-out duration-700 group"
           >
             Let's Chat
             <span 
-              className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-700 group-hover:w-full"
+              className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#FF5E1A] transition-all duration-700 group-hover:w-full"
             ></span>
           </Link>
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-3 border-t border-gray-200">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-3 border-t border-[#FF5E1A]">
           <div>
             <img
-              src="/fullLogo.svg"
+              src="/whiteLogo.svg"
               alt="Logo"
               className="h-10 object-contain w-44 transition-opacity duration-300"
             />

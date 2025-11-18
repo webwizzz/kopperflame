@@ -98,7 +98,7 @@ const Work = () => {
   const secondRowProjects = projects.slice(2)
 
   return (
-    <section className="min-h-screen bg-white px-4 sm:px-6 md:px-8 py-10 md:py-12">
+    <section className="min-h-screen bg-black text-white px-4 sm:px-6 md:px-8 py-10 md:py-12">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -109,7 +109,7 @@ const Work = () => {
         <div className="flex flex-col sm:flex-row justify-between items-baseline border-b-2 mb-6 sm:mb-10 pb-4 sm:pb-6">
           <motion.h2
             variants={itemVariants}
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-[500] mb-2 sm:mb-0"
+            className="text-5xl sm:text-7xl md:text-8xl font-grand lg:text-9xl xl:text-[12rem] font-[500] mb-2 sm:mb-0"
           >
             Work
           </motion.h2>

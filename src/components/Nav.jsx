@@ -63,17 +63,17 @@ const Nav = () => {
     setIsDarkLogo((isOverWhite && !isHomePage) || (isHomePage && isScrolled))
   }, [isOverWhite, isHomePage, isScrolled])
 
-  const navItemClass = `transition-colors duration-300 ${isDarkLogo ? "text-black" : "text-white"} hover:opacity-80`
+  const navItemClass = `transition-colors duration-300 font-grand hover:opacity-80`
 
   return (
     <>
       <nav
         ref={navRef}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/70 backdrop-blur-sm shadow-md" : "bg-transparent"
+          isScrolled ? " backdrop-blur-xl shadow-md" : "bg-transparent"
         } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
       >
-        <div className="max-w-[2000px] mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
+        <div className="max-w-[2000px] text-[#FF5E1A] mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
           <Link to="/" className={`text-xl md:text-2xl font-light ${navItemClass}`}>
             <img
               src={isDarkLogo ? "/darkLogo.svg" : "/whiteLogo.svg"}
