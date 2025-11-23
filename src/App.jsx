@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Route, BrowserRouter as Router, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
@@ -7,26 +7,17 @@ import SvgShuffleLoader from "./pages/SvgShuffleLoader";
 
 // Lazy loading for pages
 const ContactPage = lazy(() => import("./pages/ContactPage"));
-const AboutUs = lazy(() => import("./pages/AboutUs"));
+const AboutUs = lazy(() => import("./components/AboutC"));
 const DeepaGurnani = lazy(() => import("./pages/DeepaGurnani"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const WorkPage = lazy(() => import("./pages/WorkPage"));
-const RenuPage = lazy(() => import("./pages/RenuPage"));
-const Raf = lazy(() => import("./pages/Raf"));
 const AceBlend = lazy(() => import("./pages/AceBlend"));
 const Artist = lazy(() => import("./pages/Artist"));
 const Atelier = lazy(() => import("./pages/Atelier"));
-const SoQuod = lazy(() => import("./pages/SoQuod"));
-const Soujanya = lazy(() => import("./pages/Soujanya"));
-const WeAranemoia = lazy(() => import("./pages/WeAranemoia"));
-const Skifit = lazy(() => import("./pages/Skifit"));
-const ScooBoo = lazy(() => import("./pages/ScooBoo"));
-const Kaya = lazy(() => import("./pages/Kaya"));
-const HomesToLife = lazy(() => import("./pages/HomesToLife"));
-const FeelWell = lazy(() => import("./pages/FeelWell"));
 const DoItUp = lazy(() => import("./pages/DoItUp"));
-const Shilputsi = lazy(() => import("./pages/Shilputsi"));
-const FineArts = lazy(() => import("./pages/FineArts"));
+const FeelWell = lazy(() => import("./pages/FeelWell"));
+const PhotoPage = lazy(() => import("./pages/PhotoPage"));
+const Cinematography = lazy(() => import("./pages/Cinematography"));
 
 const AppContent = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -75,22 +66,13 @@ const AppContent = () => {
             <Route path="/work" element={<WorkPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/work/deepa-gurnani" element={<DeepaGurnani />} />
-            <Route path="/work/renu-oberoi" element={<RenuPage />} />
-            <Route path="/work/raf" element={<Raf />} />
             <Route path="/work/aceblend" element={<AceBlend />} />
             <Route path="/work/artist" element={<Artist />} />
             <Route path="/work/atelier" element={<Atelier />} />
-            <Route path="/work/soquod" element={<SoQuod />} />
-            <Route path="/work/soujanya" element={<Soujanya />} />
-            <Route path="/work/wearenemoia" element={<WeAranemoia />} />
-            <Route path="/work/scooboo" element={<ScooBoo />} />
-            <Route path="/work/kaya" element={<Kaya />} />
-            <Route path="/work/homestolife" element={<HomesToLife />} />
-            <Route path="/work/feelwell" element={<FeelWell />} />
             <Route path="/work/doitup" element={<DoItUp />} />
-            <Route path="/work/shilputsi" element={<Shilputsi />} />
-            <Route path="/work/finearts" element={<FineArts />} />
-            <Route path="/work/skifit" element={<Skifit />} />
+            <Route path="/work/feelwell" element={<FeelWell />} />
+            <Route path="/work/photography" element={<PhotoPage />} />
+            <Route path="/work/cinematography" element={<Cinematography />} />
           </Routes>
         </Suspense>
         <Footer />

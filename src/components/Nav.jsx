@@ -76,20 +76,20 @@ const Nav = () => {
         <div className="max-w-[2000px] text-[#FF5E1A] mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
           <Link to="/" className={`text-xl md:text-2xl font-light ${navItemClass}`}>
             <img
-              src={isDarkLogo ? "/darkLogo.svg" : "/whiteLogo.svg"}
+              src={isDarkLogo ? "https://static.wixstatic.com/media/0af55b_4c2b958d9cea4e1a90be9f5b85a5d9fd~mv2.jpg" : "https://static.wixstatic.com/media/0af55b_4c2b958d9cea4e1a90be9f5b85a5d9fd~mv2.jpg"}
               alt="Logo"
-              className="h-10 object-contain w-44 transition-all duration-300"
+              className="h-20 object-contain w-44 transition-all duration-300"
             />
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
             <span className={navItemClass}>©2024</span>
           </div>
-          <div className="flex items-center gap-8">
+          {/* <div className="flex items-center gap-8">
             <Link to="/work" className={navItemClass}>
               Work
             </Link>
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-4">
             <Link to="/about" className={`hidden md:block ${navItemClass}`}>

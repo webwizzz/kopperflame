@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl font-semibold leading-tight;
+  }
+
+  p {
+    @apply text-xl font-medium;
+  }
+
+  img {
+    @apply w-full h-full object-cover;
+  }
+
+  .app {
+    @apply w-full;
+  }
+
+  .cards {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 900px) {
+    h1 {
+      @apply mb-16;
+    }
+
+    p {
+      @apply text-base;
+    }
+
+    .card-inner {
+      @apply flex-col;
+    }
+
+    .card-img {
+      @apply hidden;
+    }
+  }
+}

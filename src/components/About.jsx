@@ -34,7 +34,7 @@ const About = () => {
   }
 
   return (
-    <section className="min-h-screen text-white bg-black px-4 md:px-8 py-2 md:py-4">
+    <section className="min-h-screen text-white bg-[#171717] px-4 md:px-8 py-2 md:py-4">
       <motion.div
         ref={ref}
         initial="hidden"
