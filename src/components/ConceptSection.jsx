@@ -31,7 +31,7 @@ const ConceptSection = ({pdp1,pdp2,d1,d2,d3}) => {
   }
 
   return (
-    <section className="min-h-screen bg-white px-4">
+    <section className="min-h-screen bg-[#171717] text-white px-4">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -41,7 +41,7 @@ const ConceptSection = ({pdp1,pdp2,d1,d2,d3}) => {
       >
         <motion.h2
           variants={itemVariants}
-          className="text-5xl md:text-6xl font-[450]  leading-tight mb-32 lg:max-w-[50%]"
+          className="text-3xl md:text-5xl font-thin  leading-tight mb-32"
         >
           {pdp1}
         </motion.h2>
@@ -54,17 +54,17 @@ const ConceptSection = ({pdp1,pdp2,d1,d2,d3}) => {
             <div className="flex justify-between border-t w-80 items-center gap-4">
                 
               <span className="text-lg">{d1}</span>
-              <span className="w-2 h-2 bg-black rounded-full"></span>
+              <span className="w-2 h-2 bg-[#171717] rounded-full"></span>
             </div>
             <div className="flex justify-between border-t w-80 items-center gap-4">
             
               <span className="text-lg">{d2}</span>
-              <span className="w-2 h-2 bg-black rounded-full"></span>
+              <span className="w-2 h-2 bg-[#171717] rounded-full"></span>
             </div>
             <div className="flex justify-between border-t w-80 items-center gap-4">
              
               <span className="text-lg">{d3}</span>
-              <span className="w-2 h-2 bg-black rounded-full"></span>
+              <span className="w-2 h-2 bg-[#171717] rounded-full"></span>
             </div>
           </motion.div>
 

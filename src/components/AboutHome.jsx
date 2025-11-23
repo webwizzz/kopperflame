@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 function AboutHome() {
@@ -25,13 +24,13 @@ function AboutHome() {
               className="text-sm sm:text-base border-b-2 md:text-lg text-gray-600 font-medium pl-1"
               
             >
-              We are Bamboo Digital
+              We are Kopper Flame 
             </motion.p>
             
             <motion.p 
               className="text-[clamp(1.45rem,4vw,2.7rem)] leading-[1.1] text-gray-900 max-w-full"
             >
-              Bamboo Digital’s journey began in 2022 with two ambitious leaders—Shruti Mohan and Rishabh Suman Kapoor—who envisioned an agency that bridges the gap between creativity and results-driven strategy. What started as an idea over brainstorming sessions has now become a trusted name for brands looking to elevate their marketing and design.
+              Kopper Flame ’s journey began in 2022 with two ambitious leaders—Shruti Mohan and Rishabh Suman Kapoor—who envisioned an agency that bridges the gap between creativity and results-driven strategy. What started as an idea over brainstorming sessions has now become a trusted name for brands looking to elevate their marketing and design.
             </motion.p>
           </div>
         </div>

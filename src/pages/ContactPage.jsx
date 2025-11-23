@@ -82,10 +82,10 @@ const ContactPage = () => {
   };
 
   return (
-    <section className="min-h-screen bg-white">
+    <section className="min-h-screen text-white bg-[#171717]">
       <motion.h1
         variants={itemVariants}
-        className="text-[6rem] md:text-[9rem] lg:text-[13rem] font-[500] border-b-2 px-2 pt-6 pb-8 md:pb-10 lg:pb-40"
+        className="text-[6rem]  md:text-[9rem] font-grand lg:text-[9rem] font-[500] border-b-2 px-2 pt-20 pb-8 md:pb-10 lg:pb-40"
       >
         Contact
       </motion.h1>
@@ -184,7 +184,7 @@ const ContactPage = () => {
               className="p-4 sm:p-6 lg:py-10"
             >
               {successMessage ? (
-                <div className="bg-black text-white p-8 md:py-10 lg:py-16">
+                <div className="bg-[black] text-white p-8 md:py-10 lg:py-16">
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
                     Let&apos;s collaborate and make wonderful stuff together!
                   </h2>
@@ -193,12 +193,12 @@ const ContactPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="bg-black text-white p-8 md:py-10 lg:py-16">
+                <div className="bg-[#FF5E1A] text-black p-8 md:py-10 lg:py-16">
                   <form onSubmit={handleSubmit} className="space-y-12">
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16">
+                    <h2 className="text-3xl md:text-4xl font-mono tracking-tighter leading-tighter lg:text-5xl font-medium  mb-16">
                       Let&apos;s collaborate and make wonderful stuff together!
                     </h2>
-                    <div className="space-y-8">
+                    <div className="space-y-8 font-mono font-semibold leading-tight tracking-tight">
                       <div>
                         <input
                           type="text"
@@ -206,7 +206,7 @@ const ContactPage = () => {
                           value={formData.name}
                           onChange={handleInputChange}
                           placeholder="Your Name"
-                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                          className="w-full bg-transparent border-b border-white/20 py-4 text-black placeholder:text-black/60 focus:outline-none focus:border-black transition-colors"
                           required
                         />
                       </div>
@@ -218,7 +218,7 @@ const ContactPage = () => {
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="Your Email"
-                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors"
+                          className="w-full bg-transparent border-b border-white/20 py-4 text-black placeholder:text-black/60 focus:outline-none focus:border-black transition-colors"
                           required
                         />
                       </div>
@@ -230,7 +230,7 @@ const ContactPage = () => {
                           onChange={handleInputChange}
                           placeholder="Your message"
                           rows={4}
-                          className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/60 focus:outline-none focus:border-white transition-colors resize-none"
+                          className="w-full bg-transparent border-b border-white/20 py-4 text-black placeholder:text-black/60 focus:outline-none focus:border-black transition-colors resize-none"
                           required
                         />
                       </div>
@@ -238,7 +238,7 @@ const ContactPage = () => {
 
                     <button
                       type="submit"
-                      className="inline-block text-lg border-b border-white pb-1 hover:opacity-70 transition-opacity"
+                      className="inline-block text-lg border-b border-black pb-1 hover:opacity-70 transition-opacity"
                     >
                       Submit your message
                     </button>

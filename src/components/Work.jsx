@@ -1,36 +1,51 @@
-import React, { useState, useEffect, useRef } from 'react'
 import { motion, useAnimation } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import { HiArrowUpRight } from 'react-icons/hi2'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 
 const projects = [
   {
     id: 1,
-    title: "Renu Oberoi",
+    title: "Photography",
     category: "Visual Identity",
-    image: "/1.png",
-    route: "/work/renu-oberoi"
+    image: "https://static.wixstatic.com/media/0af55b_b2d0ffffa1144b09b840fc21aea2da6c~mv2.png",
+    route: "/work/photography"
   },
   {
     id: 2,
-    title: "Deepa Gurnani",
+    title: "Graphic Designing",
     category: "Visual Identity",
-    image: "/2.png",
-    route: "/work/deepa-gurnani"
+    image: "https://static.wixstatic.com/media/0af55b_54f9cd5377094c7ca650c46cc03854f2~mv2.png",
+    route: "/work/graphic-designing"
   },
   {
     id: 3,
-    title: "RAF Clothing",
+    title: "Cinematography",
     category: "Brand Strategy",
-    image: "/3.png",
-    route: "/work/raf"
+    image: "https://static.wixstatic.com/media/0af55b_daef115c54224960ad242774326b9e98~mv2.png",
+    route: "/work/cinematography"
   },
   {
     id: 4,
-    title: "Ace Blend",
+    title: "Social Media Management",
     category: "Web Design",
-    image: "/4.png",
-    route: "/work/aceblend"
+    image: "https://static.wixstatic.com/media/0af55b_daef115c54224960ad242774326b9e98~mv2.png",
+    route: "/work/social-media"
+  },
+  {
+    id: 5,
+    title: "3D",
+    category: "Web Design",
+    image: "https://static.wixstatic.com/media/0af55b_daef115c54224960ad242774326b9e98~mv2.png",
+    route: "/work/3d"
+  },
+  {
+    id: 6,
+    title: "Web Development",
+    category: "Web Design",
+    image: "https://static.wixstatic.com/media/0af55b_b8959bb718064f0db07ae7c61190eca3~mv2.png",
+    route: "/work/web-development"
   },
 ]
 
@@ -86,19 +101,22 @@ const Work = () => {
   })
   const controls = useAnimation()
   const [isFirstRowLoaded, setIsFirstRowLoaded] = useState(false)
+  const [isSecondRowLoaded, setIsSecondRowLoaded] = useState(false)
 
   useEffect(() => {
     if (inView) {
       controls.start("visible")
       setTimeout(() => setIsFirstRowLoaded(true), 1000) // Delay second row animation
+      setTimeout(() => setIsSecondRowLoaded(true), 2000) // Delay third row animation
     }
   }, [inView, controls])
 
   const firstRowProjects = projects.slice(0, 2)
-  const secondRowProjects = projects.slice(2)
+  const secondRowProjects = projects.slice(2, 4)
+  const thirdRowProjects = projects.slice(4)
 
   return (
-    <section className="min-h-screen bg-black text-white px-4 sm:px-6 md:px-8 py-10 md:py-12">
+    <section className="min-h-screen bg-[#171717] text-white px-4 sm:px-6 md:px-8 py-10 md:py-12">
       <motion.div
         ref={ref}
         initial="hidden"
@@ -109,9 +127,9 @@ const Work = () => {
         <div className="flex flex-col sm:flex-row justify-between items-baseline border-b-2 mb-6 sm:mb-10 pb-4 sm:pb-6">
           <motion.h2
             variants={itemVariants}
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[12rem] font-[500] mb-2 sm:mb-0"
+            className="text-5xl sm:text-5xl md:text-6xl font-grand lg:text-8xl xl:text-[10rem] font-[500] mb-2 sm:mb-0"
           >
-            Work
+            Services
           </motion.h2>
           <div className="flex flex-col sm:flex-row w-1/2 justify-between items-start sm:items-center gap-2 sm:gap-8">
             <motion.span
@@ -145,18 +163,27 @@ const Work = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="group"
+              className="group h-40"
             >
               <Link to={project.route}>
-                <div className="relative overflow-hidden mb-4 aspect-w-16 aspect-h-9">
+                <div className="relative overflow-hidden h-full w-full border-2 border-white/30 hover:border-white/60 transition-colors duration-300">
                   <LazyImage
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+                  <div className="absolute inset-0 flex items-start justify-between p-6">
+                    <div>
+                      <h3 className="text-2xl sm:text-4xl font-grand font-light text-white">{project.title}</h3>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center group-hover:bg-white/10 transition-colors duration-300">
+                        <HiArrowUpRight className="w-6 h-6 text-white" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-light">{project.title}</h3>
-                <p className="text-sm text-gray-600">{project.category}</p>
               </Link>
             </motion.div>
           ))}
@@ -173,18 +200,65 @@ const Work = () => {
               <motion.div
                 key={project.id}
                 variants={itemVariants}
-                className="group"
+                className="group h-40"
               >
                 <Link to={project.route}>
-                  <div className="relative overflow-hidden mb-4 aspect-w-16 aspect-h-9">
+                  <div className="relative overflow-hidden h-full w-full border-2 border-white/30 hover:border-white/60 transition-colors duration-300">
                     <LazyImage
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+                    <div className="absolute inset-0 flex items-start justify-between p-6">
+                      <div>
+                        <h3 className="text-xl font-grand sm:text-4xl font-light text-white">{project.title}</h3>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center group-hover:bg-white/10 transition-colors duration-300">
+                          <HiArrowUpRight className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-light">{project.title}</h3>
-                  <p className="text-sm text-gray-600">{project.category}</p>
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
+
+        {isSecondRowLoaded && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-4 sm:mt-6"
+          >
+            {thirdRowProjects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="group h-40"
+              >
+                <Link to={project.route}>
+                  <div className="relative overflow-hidden h-full w-full border-2 border-white/30 hover:border-white/60 transition-colors duration-300">
+                    <LazyImage
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+                    <div className="absolute inset-0 flex items-start justify-between p-6">
+                      <div>
+                        <h3 className="text-2xl sm:text-4xl font-grand font-light text-white">{project.title}</h3>
+                      </div>
+                      <div className="flex-shrink-0">
+                        <div className="w-12 h-12 border-2 border-white rounded-full flex items-center justify-center group-hover:bg-white/10 transition-colors duration-300">
+                          <HiArrowUpRight className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </Link>
               </motion.div>
             ))}

@@ -1,9 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
-  const mainLinks = ['Work','Contact','About']
+  const mainLinks = ['Contact','About']
   const socialLinks = [
     { name: 'Instagram', url: 'https://www.instagram.com/bamboodigital.mate/' },
     { name: 'Facebook', url: 'https://facebook.com/your_page' },
@@ -14,16 +13,16 @@ const Footer = () => {
   
 
   return (
-    <footer className="bg-[#000000] text-white pt-4 md:pt-40">
+    <footer className="bg-[#171717] text-white pt-4 md:pt-40">
       <div className="max-w-[2000px] mx-auto px-4 md:px-8 border-[#FF5E1A] border-t-2 py-2">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-9 mb-10 md:mb-60 ">
           {/* Logo */}
           <div>
             <Link to="/" className="text-2xl font-light">
               <img
-                src="/whiteLogo.svg" 
+                src="https://static.wixstatic.com/media/0af55b_4c2b958d9cea4e1a90be9f5b85a5d9fd~mv2.jpg" 
                 alt="Logo"
-                className="h-10 object-contain w-44 transition-opacity duration-300"
+                className="h-40 object-contain w-44 transition-opacity duration-300"
               />
             </Link>
           </div>
@@ -37,7 +36,7 @@ const Footer = () => {
                 className="relative group"
               >
                 {link}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-black transition-all duration-300 ease-out group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#171717] transition-all duration-300 ease-out group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -52,7 +51,7 @@ const Footer = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between py-2 px-3 -mx-3 group transition-colors duration-300 hover:bg-black"
+                className="flex items-center justify-between py-2 px-3 -mx-3 group transition-colors duration-300 hover:bg-[#171717]"
               >
                 <span className="text-lg group-hover:text-white transition-colors duration-300">
                   {social.name}
@@ -81,11 +80,11 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-3 border-t border-[#FF5E1A]">
           <div>
-            <img
-              src="/whiteLogo.svg"
-              alt="Logo"
-              className="h-10 object-contain w-44 transition-opacity duration-300"
-            />
+            <h1
+              className="text-2xl font-bold "
+            >
+              KOPPER FLAME STUDIO
+            </h1>
           </div>
           
           <span className="text-sm">©2024</span>

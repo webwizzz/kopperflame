@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { header } from 'framer-motion/client'
 
-const DeepaGurnaniHeader = ({header,year,client,service,industry}) => {
+const DeepaGurnaniHeader = ({header}) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,7 +26,7 @@ const DeepaGurnaniHeader = ({header,year,client,service,industry}) => {
   }
 
   return (
-    <header className=" lg:min-h-[70vh] flex flex-col justify-between px-3 md:px-2 lg:px-4 pb-10  pt-6 md:pt-4 lg:pt-8">
+    <header className=" lg:min-h-[50vh]  flex flex-col justify-center items-center px-3 md:px-2 lg:px-4 pb-10  pt-24 md:pt-20 lg:pt-20">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -35,38 +35,13 @@ const DeepaGurnaniHeader = ({header,year,client,service,industry}) => {
       >
         <motion.h1 
           variants={itemVariants}
-          className="text-[5rem] md:text-[8rem] lg:text-[10rem] leading-tighter font-[550]"
+          className="text-[2rem] font-grand md:text-[5rem] lg:text-[7rem] leading-tighter font-[550]"
         >
           {header}
         </motion.h1>
       </motion.div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="flex flex-col-4 md:flex-col-2 justify-between  sm:text-md   pt-16 border-b pb-4"
-      >
-        <motion.div variants={itemVariants} className=" text-xl sm:text-2xl md:4xl lg:4xl">
-          
-          <p>{year}</p>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-md sm:text-md lg:xl">
-          <p className=" text-gray-500">Client</p>
-          <p>{client}</p>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-md sm:text-md lg:xl">
-          <p className=" text-gray-500">Service</p>
-          <p>{service}</p>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="space-y-1 leading-tight text-md sm:text-md lg:xl">
-          <p className=" text-gray-500">Industry</p>
-          <p>{industry}</p>
-        </motion.div>
-      </motion.div>
+     
     </header>
   )
 }

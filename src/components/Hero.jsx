@@ -59,7 +59,7 @@ const Hero = () => {
   }
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative h-screen w-full pt-10 overflow-hidden">
       {/* Background Video */}
       <video
         ref={videoRef}
@@ -76,7 +76,7 @@ const Hero = () => {
         <button
           onClick={handleUnmute}
           aria-label="Unmute background video"
-          className="absolute bottom-6 right-6 z-20 bg-black/40 hover:bg-black/50 text-white p-3 rounded-full backdrop-blur"
+          className="absolute bottom-6 right-6 z-20 bg-[#171717]/40 hover:bg-[#171717]/50 text-white p-3 rounded-full backdrop-blur"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path d="M9 5a1 1 0 00-1 1v8a1 1 0 001 1h.586l3.707 3.707A1 1 0 0014 18V2a1 1 0 00-1.707-.707L9.586 5H9z" />
@@ -86,7 +86,7 @@ const Hero = () => {
       )}
       
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[#171717]/40" />
       
       {/* Navigation */}
       <Nav />

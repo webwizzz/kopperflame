@@ -1,48 +1,29 @@
-import { motion } from 'framer-motion'
-import { useEffect } from 'react'
-import ConceptSection from '../components/ConceptSection'
-import DeepaGurnaniHeader from '../components/DeepaGurnaniHeader'
-import ZoomImageSection from '../components/ZoomImageSection'
+import BrandPageTemplate from '../components/BrandPageTemplate'
 
 const DeepaGurnani = () => {
-  
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{  x: "100%" }}
-      transition={{ duration: 0.6 }}
-      className="min-h-screen bg-white"
-    >
-       <DeepaGurnaniHeader 
-      header="Deepa Gurnani" 
+    <BrandPageTemplate
+      header="Deepa Gurnani"
       year="2024"
-      client="Deepa Gurnani"  
-      service="Visual Identity "
-      industry=" Jewellery"
-      />
-      <ZoomImageSection image="/2.png" />
-      <ConceptSection 
-      pdp1=" Redefining elegance in the digital space, here craftsmanship meets modern transformation"
-      pdp2="This transformation goes beyond aesthetics  it’s a platform that celebrates craftsmanship while ensuring effortless discoverability. With a perfect blend of artistry and functionality, the website positions Deepa Gurnani as a global beacon for Indian craftsmanship in the luxury accessories space."
-      d1="Visual Identity "
+      client="Deepa Gurnani"
+      service="Visual Identity"
+      industry="Jewellery"
+      mainImage="/2.png"
+      pdp1="Redefining elegance in the digital space, here craftsmanship meets modern transformation"
+      pdp2="This transformation goes beyond aesthetics  it's a platform that celebrates craftsmanship while ensuring effortless discoverability. With a perfect blend of artistry and functionality, the website positions Deepa Gurnani as a global beacon for Indian craftsmanship in the luxury accessories space."
+      d1="Visual Identity"
       d2="UIUX Design"
       d3="Website Development"
-      />
-      <ZoomImageSection image="/deepa1.png" />
-      <ZoomImageSection image="/deepa2.png" />
-      <ZoomImageSection image="/deepa3.png" />
-      <ZoomImageSection image="/deepa4.png" />
-      <ZoomImageSection image="/deepa5.png" />
-      <ZoomImageSection image="/deepa6.png" />
-      <ZoomImageSection image="/deepa7.png" />
-
-    </motion.div>
+      images={[
+        '/deepa1.png',
+        '/deepa2.png',
+        '/deepa3.png',
+        '/deepa4.png',
+        '/deepa5.png',
+        '/deepa6.png',
+        '/deepa7.png'
+      ]}
+    />
   )
 }
 
